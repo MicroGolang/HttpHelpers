@@ -5,10 +5,10 @@
 ** @Filename:				response.go
 **
 ** @Last modified by:		Tbouder
-** @Last modified time:		Thursday 26 September 2019 - 13:45:01
+** @Last modified time:		Thursday 26 September 2019 - 14:00:15
 *******************************************************************************/
 
-package		response
+package		httpHelper
 
 import		"encoding/json"
 import		"net/http"
