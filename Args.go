@@ -5,10 +5,10 @@
 ** @Filename:				Args.go
 **
 ** @Last modified by:		Tbouder
-** @Last modified time:		Thursday 26 September 2019 - 14:00:12
+** @Last modified time:		Thursday 26 September 2019 - 14:04:25
 *******************************************************************************/
 
-package		httpHelper
+package		httphelpers
 
 import		"github.com/julienschmidt/httprouter"
 import		"encoding/json"
