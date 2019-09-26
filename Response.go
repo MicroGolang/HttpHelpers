@@ -5,7 +5,7 @@
 ** @Filename:				response.go
 **
 ** @Last modified by:		Tbouder
-** @Last modified time:		Thursday 26 September 2019 - 11:08:20
+** @Last modified time:		Thursday 26 September 2019 - 13:45:01
 *******************************************************************************/
 
 package		response
@@ -42,6 +42,24 @@ func	ResolveCookie(w *http.ResponseWriter, cookieName, cookieValue string) {
 		Path:		`/`,
 		Expires:    time.Now().Add(time.Hour * 24 * 30 * 2),
 		RawExpires:	time.Now().Add(time.Hour * 24 * 30 * 2).String(),
+		HttpOnly:	true,
+	}
+	http.SetCookie(*w, Cookie)
+}
+
+/******************************************************************************
+**	RemoveCookie
+**	Remove a cookie for the next response. The expiration is set to 1 hour ago
+**	in order to make it invalid.
+******************************************************************************/
+func	RemoveCookie(w *http.ResponseWriter, cookieName, cookieValue string) {
+	Cookie	:=	&http.Cookie {
+		Name:		cookieName,
+		Value:		cookieValue,
+		Path:		`/`,
+		Expires:    time.Now().Add(time.Hour * -1),
+		RawExpires:	time.Now().Add(time.Hour * -1).String(),
+		Secure:		true,
 		HttpOnly:	true,
 	}
 	http.SetCookie(*w, Cookie)
